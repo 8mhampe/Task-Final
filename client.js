@@ -20,18 +20,23 @@ function totals(list){
     }
 
     return {
-        totalValue, totalTime
+        totalTime, totalValue
     }
 }
 
 //works the the same as above, but stops short at the kth number in the list
 function partialTotals(list,k){
+
+    let totalValue = 0;
+    let totalTime = 0;
+
     for(let a=0; a<k; a++){
         totalValue = totalValue + list[a].value;
         totalTime = totalTime + list[a].time;
     }
     return{
         totalTime, totalValue
+    }
 }
 
 //returns a sorted version of the task list from least to greatest according to its time variable
@@ -51,6 +56,9 @@ function sortValue(list){
 
 //returns a sorted version of the task list from least to greatest according to its impact
 function sortImpact(list){
+
+    let totalValue = 0;
+    let totalTime = 0;
 
     //create a function which returns the impact of a given task
     function impact(task){
