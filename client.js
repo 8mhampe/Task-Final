@@ -57,12 +57,9 @@ function sortValue(list){
 //returns a sorted version of the task list from least to greatest according to its impact
 function sortImpact(list){
 
-    let totalValue = 0;
-    let totalTime = 0;
-
     //create a function which returns the impact of a given task
     function impact(task){
-        let i = totalValue * (1/totalTime);
+        let i = task.value * (1/task.time);
         return i;
     }
     //finishes the sort
